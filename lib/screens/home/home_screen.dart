@@ -15,42 +15,29 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  final List<String> _tabs = ['News feed', 'Top Traders', 'Following'];
+  final List<String> _tabs = AppStrings.homeTabs;
   int _activeTab = 1;
 
   @override
   Widget build(BuildContext context) {
-    final screenHeight = MediaQuery.of(context).size.height;
-
     return Scaffold(
-      backgroundColor: Colors.transparent,
-      body: Container(
-        width: double.infinity,
-        constraints: BoxConstraints(minHeight: screenHeight),
-        decoration: const BoxDecoration(
-          gradient: RadialGradient(
-            colors: AppColors.backgroundGradient,
-            center: Alignment.topLeft,
-            radius: 3.0,
-          ),
-        ),
-        child: SafeArea(
-          child: ListView(
-            padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 20),
-            children: [
-              HomeHeader(),
-              const SizedBox(height: 30),
-              _buildActionPill(),
-              const SizedBox(height: 20),
-              HomeTabRow(
-                tabs: _tabs,
-                activeIndex: _activeTab,
-                onTabChanged: (index) => setState(() => _activeTab = index),
-              ),
-              const SizedBox(height: 16),
-              _buildTabContent(),
-            ],
-          ),
+      backgroundColor: AppColors.transparent,
+      body: SafeArea(
+        child: ListView(
+          padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 20),
+          children: [
+            HomeHeader(),
+            const SizedBox(height: 30),
+            _buildActionPill(),
+            const SizedBox(height: 20),
+            HomeTabRow(
+              tabs: _tabs,
+              activeIndex: _activeTab,
+              onTabChanged: (index) => setState(() => _activeTab = index),
+            ),
+            const SizedBox(height: 16),
+            _buildTabContent(),
+          ],
         ),
       ),
     );
@@ -67,12 +54,23 @@ class _HomeScreenState extends State<HomeScreen> {
       child: Row(
         children: [
           Expanded(
-            child: Text(
-              AppStrings.postActivity,
+            child: TextFormField(
               style: GoogleFonts.plusJakartaSans(
                 fontSize: 14,
                 fontWeight: FontWeight.w500,
-                color: AppColors.white70,
+                color: AppColors.white,
+              ),
+              cursorColor: AppColors.white,
+              decoration: InputDecoration(
+                hintText: AppStrings.postActivity,
+                hintStyle: GoogleFonts.plusJakartaSans(
+                  fontSize: 14,
+                  fontWeight: FontWeight.w500,
+                  color: AppColors.white70,
+                ),
+                border: InputBorder.none,
+                isDense: true,
+                contentPadding: EdgeInsets.zero,
               ),
             ),
           ),
@@ -122,15 +120,15 @@ class _HomeScreenState extends State<HomeScreen> {
       margin: const EdgeInsets.only(top: 12),
       padding: const EdgeInsets.all(18),
       decoration: BoxDecoration(
-        color: const Color(0xFF10263C),
+        color: AppColors.homeNewsCardBackground,
         borderRadius: BorderRadius.circular(20),
-        border: Border.all(color: Colors.white10),
+        border: Border.all(color: AppColors.white10),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
-            'Daily pulse',
+            AppStrings.dailyPulseTitle,
             style: GoogleFonts.plusJakartaSans(
               fontSize: 16,
               fontWeight: FontWeight.w600,
@@ -139,7 +137,7 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
           const SizedBox(height: 6),
           Text(
-            'Stay up to date with the latest trader posts',
+            AppStrings.dailyPulseSubtitle,
             style: GoogleFonts.plusJakartaSans(color: AppColors.white70),
           ),
         ],

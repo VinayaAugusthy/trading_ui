@@ -16,32 +16,34 @@ class HomeTabRow extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      children: List.generate(tabs.length, (index) {
-        final isActive = activeIndex == index;
-        return Expanded(
-          child: GestureDetector(
-            onTap: () => onTabChanged(index),
-            child: Container(
-              margin: const EdgeInsets.symmetric(horizontal: 6),
-              padding: const EdgeInsets.symmetric(vertical: 12),
-              decoration: BoxDecoration(
-                color: AppColors.grey,
-                borderRadius: BorderRadius.circular(20),
-              ),
-              child: Center(
+    return SingleChildScrollView(
+      scrollDirection: Axis.horizontal,
+      child: Row(
+        children: List.generate(tabs.length, (index) {
+          final isActive = activeIndex == index;
+          return Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 4),
+            child: GestureDetector(
+              onTap: () => onTabChanged(index),
+              child: Container(
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 18, vertical: 12),
+                decoration: BoxDecoration(
+                  color: AppColors.grey,
+                  borderRadius: BorderRadius.circular(20),
+                ),
                 child: Text(
                   tabs[index],
                   style: GoogleFonts.plusJakartaSans(
                     fontWeight: FontWeight.w600,
-                    color: isActive ? Colors.yellow : Colors.white,
+                    color: isActive ? AppColors.yellow : AppColors.white,
                   ),
                 ),
               ),
             ),
-          ),
-        );
-      }),
+          );
+        }),
+      ),
     );
   }
 }

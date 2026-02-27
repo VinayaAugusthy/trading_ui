@@ -10,9 +10,15 @@ class HomeHeader extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: [
-        CircleAvatar(
-          radius: 24,
-          backgroundImage: AssetImage('assets/images/user_avatar.jpg'),
+        SizedBox(
+          width: 48,
+          height: 48,
+          child: ClipOval(
+            child: Image.asset(
+              'assets/images/user_avatar.png',
+              fit: BoxFit.cover,
+            ),
+          ),
         ),
         const SizedBox(width: 10),
         Column(

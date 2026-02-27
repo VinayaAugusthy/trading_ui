@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:social_trading_community_ui/constants/app_colors.dart';
+import 'package:social_trading_community_ui/constants/app_strings.dart';
 
 class FollowingCard extends StatelessWidget {
   const FollowingCard({super.key});
@@ -12,9 +13,9 @@ class FollowingCard extends StatelessWidget {
       margin: const EdgeInsets.only(top: 12),
       padding: const EdgeInsets.all(18),
       decoration: BoxDecoration(
-        color: const Color(0xFF0C1B2C),
+        color: AppColors.followingCardBackground,
         borderRadius: BorderRadius.circular(20),
-        border: Border.all(color: Colors.white10),
+        border: Border.all(color: AppColors.white10),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -23,12 +24,12 @@ class FollowingCard extends StatelessWidget {
             children: [
               CircleAvatar(
                 radius: 16,
-                backgroundColor: Colors.white24,
-                child: const Icon(Icons.person, color: Colors.white, size: 18),
+                backgroundColor: AppColors.white24,
+                child: const Icon(Icons.person, color: AppColors.white, size: 18),
               ),
               const SizedBox(width: 10),
               Text(
-                'Latasha Gibson',
+                AppStrings.followingPrimaryUserName,
                 style: GoogleFonts.plusJakartaSans(
                   color: AppColors.white,
                   fontWeight: FontWeight.w600,
@@ -38,7 +39,7 @@ class FollowingCard extends StatelessWidget {
           ),
           const SizedBox(height: 10),
           Text(
-            'Following these top traders keeps your feed curated.',
+            AppStrings.followingDescription,
             style: GoogleFonts.plusJakartaSans(color: AppColors.white70),
           ),
         ],

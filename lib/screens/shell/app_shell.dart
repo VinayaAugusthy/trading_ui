@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:social_trading_community_ui/constants/app_colors.dart';
 import 'package:social_trading_community_ui/constants/app_strings.dart';
+import 'package:social_trading_community_ui/screens/community/community_screen.dart';
 import 'package:social_trading_community_ui/screens/home/home_screen.dart';
 
 class AppShell extends StatefulWidget {
@@ -15,7 +16,7 @@ class _AppShellState extends State<AppShell> {
 
   late final List<Widget> _pages = const <Widget>[
     HomeScreen(),
-    _PlaceholderScreen(title: AppStrings.community),
+    CommunityScreen(),
     _PlaceholderScreen(title: AppStrings.chat),
     _PlaceholderScreen(title: AppStrings.settings),
   ];

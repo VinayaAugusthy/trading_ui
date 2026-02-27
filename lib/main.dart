@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'constants/app_colors.dart';
 import 'screens/shell/app_shell.dart';
 
 void main() {
@@ -14,8 +15,8 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Social Trading Community',
       theme: ThemeData.dark().copyWith(
-        scaffoldBackgroundColor: Colors.transparent,
-        colorScheme: const ColorScheme.dark(primary: Color(0xFF1C3A6F)),
+        scaffoldBackgroundColor: AppColors.transparent,
+        colorScheme: const ColorScheme.dark(primary: AppColors.primaryAccent),
       ),
       home: const AppShell(),
     );

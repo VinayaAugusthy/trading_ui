@@ -128,7 +128,7 @@ class _TopTraderCardItem extends StatelessWidget {
                             child: Text(
                               '60%',
                               style: GoogleFonts.plusJakartaSans(
-                                color: const Color(0xFF82DBB3),
+                                color: AppColors.lightGreen,
                                 fontSize: 50,
                                 fontWeight: FontWeight.w400,
                               ),
@@ -139,7 +139,7 @@ class _TopTraderCardItem extends StatelessWidget {
                           Text(
                             AppStrings.high,
                             style: GoogleFonts.plusJakartaSans(
-                              color: Colors.white,
+                              color: AppColors.white,
                               fontSize: 14,
                             ),
                           ),
@@ -245,7 +245,7 @@ class _TopTraderCardItem extends StatelessWidget {
                     children: [
                       CircleAvatar(
                         radius: 20,
-                        backgroundColor: Colors.transparent,
+                        backgroundColor: AppColors.transparent,
                         child: ClipOval(
                           child: Image.asset(
                             'assets/images/user.png',
