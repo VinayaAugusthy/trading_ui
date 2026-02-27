@@ -15,9 +15,11 @@ class AppColors {
   static const transparentLight = Color(0xFFC5D7F4);
   static const yellow = Color(0xFFFDE047);
   static const cardGradient = [
-    Color(0xFF143F52), // lighter top-left
-    Color(0xFF11384A), // mid blend
-    Color(0xFF0D2F3F), // darker bottom-right
+    Color(0xFF689FB7),
+    Color(0xFF1C4E63),
+    Color(0xFF0D2F3F),
   ];
   static const black = Color(0xFF000000);
+  static const bottomNavBarColor = Color(0xFF1B4557);
+  static const transparent = Color(0x00000000);
 }

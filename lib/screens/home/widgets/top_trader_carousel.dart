@@ -62,12 +62,12 @@ class _TopTraderCardItem extends StatelessWidget {
       margin: const EdgeInsets.only(top: 12),
       padding: const EdgeInsets.only(top: 20, left: 16, right: 16, bottom: 10),
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(24),
+        borderRadius: BorderRadius.circular(30),
         gradient: const LinearGradient(
-          begin: Alignment.topLeft,
-          end: Alignment.bottomRight,
+          begin: Alignment.topRight,
+          end: Alignment.bottomLeft,
           colors: AppColors.cardGradient,
-          stops: [0.0, 0.5, 1.0],
+          stops: [0.0, 0.35, 1.0],
         ),
       ),
       child: Stack(

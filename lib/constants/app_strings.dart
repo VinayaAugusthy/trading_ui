@@ -18,4 +18,10 @@ class AppStrings {
   static const followerUserName = 'Cameron\nWilliamson';
   static const exchangeRateValue = '1.0750';
   static const quantityValue = '10,000';
+
+  // bottom nav bar
+  static const home = 'Home';
+  static const community = 'Community';
+  static const chat = 'Chat';
+  static const settings = 'Settings';
 }
